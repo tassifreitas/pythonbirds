@@ -32,7 +32,7 @@ if __name__ == '__main__':
     del Mari.filhos
     #__dict__ - confere apenas os atributos de instância de um objeto os atributos de classe não
     print(Mari.__dict__)
-    tassiani.olhos = 1
+    tassiani.olhos = 2
     del tassiani.olhos
     print(tassiani.__dict__)
     Pessoa.olhos = 3
