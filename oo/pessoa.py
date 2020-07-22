@@ -1,6 +1,7 @@
 class Pessoa:
-    #atributo da classe
-    #métodos
+    #atributo da classe ou atributo default
+    olhos=2
+    #métodos - atributos de classe
     def __init__(self, *filhos, nome= None, idade=30):
         #atributos de instancia ou atributos de objeto - atributos criado peelo __init__
         #atributo nome com valor do parâmetro passado nome
@@ -29,9 +30,15 @@ if __name__ == '__main__':
     print(Mari.sobrenome)
     #remoção de atributos dinamicamente
     del Mari.filhos
-    #confere os atributos de instância de um objeto
+    #__dict__ - confere apenas os atributos de instância de um objeto os atributos de classe não
     print(Mari.__dict__)
+    tassiani.olhos = 1
+    del tassiani.olhos
     print(tassiani.__dict__)
+    Pessoa.olhos = 3
     # p.nome = 'Tassi'
     #print(p.nome)
-
+    print(Pessoa.olhos)
+    print(Mari.olhos)
+    print(tassiani.olhos)
+    print(id(Pessoa.olhos), id(Mari.olhos), id(tassiani.olhos))
