@@ -12,6 +12,21 @@ class Pessoa:
 
     def cumprimentar(self):
         return f'Olá {id(self)}'
+
+
+    #método de classe - está atrelado a classe. Independe de um objeto
+    #decorato @staticmethod @classmethod
+    @staticmethod
+    def metodo_estatico():
+        return 42
+
+    @ classmethod
+    #cls faz alusão a classe que está executando neste caso classe Pessoa
+    # Se usa classmethod quando se quer acesssar dados da própria classe
+    def nome_e_atributos_de_classe(cls):
+        return f'{cls} - olhos {cls.olhos}'
+
+
 if __name__ == '__main__':
     #p = Pessoa()
     #p = Pessoa('Tassiani')
@@ -42,3 +57,5 @@ if __name__ == '__main__':
     print(Mari.olhos)
     print(tassiani.olhos)
     print(id(Pessoa.olhos), id(Mari.olhos), id(tassiani.olhos))
+    print(Pessoa.metodo_estatico(), Mari.metodo_estatico())
+    print(Pessoa.nome_e_atributos_de_classe(), Mari.nome_e_atributos_de_classe())
