@@ -1,7 +1,7 @@
 class Pessoa:
     #atributo da classe
     #métodos
-    def __init__(self, *filhos, nome = None, idade=30):
+    def __init__(self, *filhos, nome= None, idade=30):
         #atributos de instancia ou atributos de objeto - atributos criado peelo __init__
         #atributo nome com valor do parâmetro passado nome
         self.nome = nome
@@ -23,5 +23,15 @@ if __name__ == '__main__':
     print(Mari.idade)
     for filho in Mari.filhos:
         print(filho.nome)
-    #p.nome = 'Tassi'
+    #atributo dinâmico. Python cria atributo não definido na classe
+
+    Mari.sobrenome = 'Freitas'
+    print(Mari.sobrenome)
+    #remoção de atributos dinamicamente
+    del Mari.filhos
+    #confere os atributos de instância de um objeto
+    print(Mari.__dict__)
+    print(tassiani.__dict__)
+    # p.nome = 'Tassi'
     #print(p.nome)
+
